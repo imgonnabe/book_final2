@@ -3,9 +3,11 @@
 <mapper namespace="com.book.web.login.LoginDAO">
 
 	<select id="login" parameterType="Map" resultType="Map">
+	<![CDATA[
 		SELECT count(*) as count, mid, mname, mgrade, mno
 		FROM members
 		WHERE mid=#{id} AND mpw=#{pw} and mgrade > 0
+		]]>
 	</select>
 
 	<select id="hasKakaoUser" parameterType="Map" resultType="Map">

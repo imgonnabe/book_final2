@@ -67,12 +67,12 @@ public class MyPageService {
 		myPageDAO.infoChange(map);
 	}
 
-	public Map<String, Object> idchk(String id) {
+	public int idchk(String id) {
 		return myPageDAO.idchk(id);
 	}
 
-	public Map<String, Object> emailchk(String email, String mid) {
-		return myPageDAO.emailchk(email, mid);
+	public int emailchk(String email) {
+		return myPageDAO.emailchk(email);
 	}
 
 	public void returnBook(Map<String, Object> map) {

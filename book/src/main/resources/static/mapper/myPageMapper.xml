@@ -312,16 +312,16 @@
 		</where>
 	</update>
 	
-	<select id="idchk" parameterType="String" resultType="Map">
-		select mid, count(*) as count
-		from members
-		where mno = #{mno}
-	</select>
-	
-	<select id="emailchk" parameterType="String" resultType="Map">
+	<select id="idchk" parameterType="String" resultType="Integer">
 		select count(*) as count
 		from members
-		where memail = #{arg0} and mid = #{arg1} 
+		where mid = #{id}
+	</select>
+	
+	<select id="emailchk" parameterType="String" resultType="Integer">
+		select count(*) as count
+		from members
+		where memail = #{email} 
 	</select>
 	
 	<update id="out" parameterType="String">

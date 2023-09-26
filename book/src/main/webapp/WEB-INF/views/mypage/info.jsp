@@ -127,7 +127,7 @@
                     <div>
                     	<input name="id" id="id" class="menu-title" type="text" placeholder="아이디"/>
                     	<input name="idchk" id="idchk" class="menu-title" type=button value="아이디 중복 확인"/>
-                    	&nbsp;<span style="color: red;" id="idchkMsg"></span>
+                    	<br><span style="color: red;" id="idchkMsg"></span>
                     	<input id="idchkhidden" type="hidden"></input>
                   	</div>
                   </div>

@@ -387,10 +387,11 @@ public class MyPageController {
 	public String idchk(@RequestParam(name="id", required = true) String id, HttpSession session) {
 		System.out.println(id);
 		if(session.getAttribute("mid") != null) {
-			Map<String, Object> map = myPageService.idchk(id);
+			System.out.println("idchk" +id);
+			int count = myPageService.idchk(id);
 			JSONObject json = new JSONObject();
-			json.put("count", map.get("count"));
-			json.put("mno", map.get("mno"));
+			json.put("count", count);
+			System.out.println(count);
 			return json.toString();
 		} else {
 			return "redirect:/login";
@@ -402,11 +403,10 @@ public class MyPageController {
 	public String emailchk(@RequestParam(name="email", required = true) String email, HttpSession session) {
 		System.out.println(email);
 		if(session.getAttribute("mid") != null) {
-			String mid = (String)session.getAttribute("mid");
-			Map<String, Object> map = myPageService.emailchk(email, mid);
-			System.out.println(map);
+			int count = myPageService.emailchk(email);
 			JSONObject json = new JSONObject();
-			json.put("count", map.get("count"));
+			json.put("count", count);
+			System.out.println(count);
 			return json.toString();
 		} else {
 			return "redirect:/login";

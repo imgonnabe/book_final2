@@ -33,8 +33,9 @@ public class LoginController {
 	@PostMapping("/Glogin")
 	public String Glogin(@RequestParam Map<String, Object> map, HttpSession session) {
 
-		//System.out.println(map);
+		System.out.println(map);
 		Map<String, Object> result = loginService.login(map);
+		System.out.println(result);
 		
 		if (String.valueOf(result.get("count")).equals("1")) {
 			session.setAttribute("mid", result.get("mid"));

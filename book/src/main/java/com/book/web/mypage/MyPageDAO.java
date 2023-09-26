@@ -36,9 +36,9 @@ public interface MyPageDAO {
 
 	void infoChange(Map<String, Object> map);
 
-	Map<String, Object> idchk(String id);
+	int idchk(String id);
 
-	Map<String, Object> emailchk(String email, String mid);
+	int emailchk(String email);
 
 	void returnBook(Map<String, Object> map);
 
