@@ -344,7 +344,7 @@ public class MyPageController {
 	@GetMapping("/info")
 	public String info(Model model, @RequestParam Map<String, Object> map, HttpSession session) {
 		if(session.getAttribute("mid") != null) {
-			map.put("mname", session.getAttribute("mname"));
+			map.put("mid", session.getAttribute("mid"));
 			Map<String, Object> info = myPageService.info(map);
 			model.addAttribute("info", info);
 			return "/mypage/info";
@@ -374,7 +374,7 @@ public class MyPageController {
 			System.out.println("phonSave : " + phone);
 			Map<String, Object> map = new HashMap<String, Object>();
 			map.put("phone", phone);
-			map.put("mname", session.getAttribute("mname"));
+			map.put("mid", session.getAttribute("mid"));
 			myPageService.phoneSave(map);
 			return "redirect:/mypage/info";
 		} else {
@@ -387,7 +387,6 @@ public class MyPageController {
 	public String idchk(@RequestParam(name="id", required = true) String id, HttpSession session) {
 		System.out.println(id);
 		if(session.getAttribute("mid") != null) {
-			System.out.println("idchk" +id);
 			int count = myPageService.idchk(id);
 			JSONObject json = new JSONObject();
 			json.put("count", count);

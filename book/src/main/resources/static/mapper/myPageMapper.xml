@@ -289,12 +289,12 @@
 	<select id="info" parameterType="Map" resultType="Map">
 		select mid, mname, maddr, mbirth, mphone, memail
 		from members
-		where mname = #{mname}
+		where mid = #{mid}
 	</select>
 	
 	<update id="phoneSave" parameterType="Map">
 		update members set mphone = #{phone}
-		where mname = #{mname}
+		where mid = #{mid}
 	</update>
 	
 	<update id="infoChange" parameterType="Map">
