@@ -94,7 +94,7 @@ $(function(){
        <hr class="divider-w">
           <div class="container">
             	<form action="./nedit" method="post" id="form">
-				<input type="text" name="title" id="title" value=${result.ntitle }>
+				<input type="text" name="title" id="title" value="${result.ntitle }">
 				<div id="editor">${result.ncontent }</div>
 				<input type="hidden" id="quill_html" name="content">
 				<input type = "hidden" name="board" value="${result.ncate }" > 
